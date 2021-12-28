@@ -6,5 +6,5 @@ $(document).ready(function(){
             $(".vs .img_box").css("margin-left","0px");
         });
     }
-    var intv = setInterval(function(){ ani1(); }, 3000);
+    var intv = setInterval(function(){ ani1(); }, 4500);
 }); 
