@@ -6,28 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="./ico/ullfavi.gif">
+    <link rel="apple-touch-icon" href="./ico/ullfavi.gif" sizes="48x48">
     <!-- 메타포 설정 -->
+    <meta name="title" content="울릉군" />
+    <meta name="Keywords" content="울릉군, 독도, 울릉도, Ulleung-gun, Dokdo" />
+    <meta name="Description" content="울릉군 홈페이지입니다." />
     <!-- 오픈그래프 설정 -->
+    <meta property="og:url" content="www.Ulleung-travel.kr">
+    <meta property="og:image" content="이미지">
+    <meta property="og:type" content="홈페이지">
+    <meta property="og:site_name" content="울릉관광">
+    <meta property="og:locale" content="울릉">
+    <meta property="og:title" content="project3">
+    <meta property="og:description" content="울릉관광 홍보사이트">
+    <meta property="og:country-name" content="TheJoeun.co">
     <!-- 폰트 로딩 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <!-- 필수 API 설정 -->
+    <!-- 외부 스타일 로딩-->
+    <!-- <link rel="stylesheet"href="./css/reset2.css"> -->
+    <!-- <link rel="stylesheet"href="./css/normalize.css"> -->
+    
+    <link rel="stylesheet"href="./css/grid.css">
+    <link rel="stylesheet"href="./css/common.css">
+    <link rel="stylesheet" href="./js/ban.css">
 </head>
 <style>
-    * {margin:0; padding: 0;}
-    body, html {width: 100%;}
-    ul {list-style: none;}
-    a {text-decoration: none;}
+/*
+color tag는 a 태그에 준다. font-size는 짝수로 한다. 
+    sub메뉴를 만들때 안보이게 하고 만들수 있다.
+*/
 </style>
 <body>
     <div class="wrap">
-       <header class="hd">
-           <div class="hd_wrap">
+       <header class="hd fix">
+        <div class="hd_wrap">
                <div class="logo">
-                <a href="index.jsp" class="logo"></a>
-                <h2 class="logo_tit"></h2>
+                <a href="index.jsp" class="logo"><img src="./img/logo.gif" alt=""></a>
+                <h2 class="logo_tit">울릉관광</h2>
                </div>
-           </div>
            <nav class="tnb">
                <ul>
+                   <li class="user_name">000님</li>
                    <li><a href="">로그인</a></li>
                    <li><a href="">로그아웃</a></li>
                    <li><a href="">마이페이지</a></li>
@@ -37,132 +60,123 @@
            <nav class="gnb">
                 <ul>
                     <li>
-                        <a href="">관광가이드
-                            <ul>
-                                <li><a href="ship.jsp">울릉도/독도 배편</a></li>
-                                <li><a href="helper.jsp">여행도우미</a></li>
-                                <li><a href="tourmap.jsp">울릉도투어맵</a></li>
-                                <li><a href="sea.jsp">해상관광</a></li>
-                                <li><a href="mainLand.jsp">주요관광지</a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                            </ul>
-                        </a>
+                        <a href="" class="dp1">관광가이드</a>
+                        <ul class="sub">
+                            <li><a href="ship.jsp">울릉도/독도 배편</a>
+                                <!-- 하위 메뉴 -->
+                            </li>
+                            <li><a href="helper.jsp">여행도우미</a></li>
+                            <li><a href="tourmap.jsp">울릉도투어맵</a></li>
+                            <li><a href="sea.jsp">해상관광</a></li>
+                            <li><a href="mainLand.jsp">주요관광지</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                        
                     </li>
                     <li>
-                        <a href="">울릉도여행
-                            <ul>
-                                <li><a href="course.jsp">추천코스</a></li>
-                                <li><a href="ullMovie.jsp">영상으로 보는 울릉</a></li>
-                                <li><a href="vr.jsp">VR로 보는 울릉</a></li>
-                                <li><a href="ent.jsp">즐길거리</a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                            </ul>
-                        </a>
+                        <a href="" class="dp1">울릉도여행</a>
+                        <ul class="sub">
+                            <li><a href="course.jsp">추천코스</a></li>
+                            <li><a href="ullMovie.jsp">영상으로 보는 울릉</a></li>
+                            <li><a href="vr.jsp">VR로 보는 울릉</a></li>
+                            <li><a href="ent.jsp">즐길거리</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                        
                     </li>
                     <li>
-                        <a href="">숙박 및 먹거리
-                            <ul>
-                                <li><a href="accomodate.jsp">숙박시설</a></li>
-                                <li><a href="food.jsp">일반먹거리</a></li>
-                                <li><a href="infoFood.jsp">음식점안내</a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                            </ul>
-                        </a>
+                        <a href="" class="dp1">숙박 및 먹거리</a>
+                        <ul class="sub">
+                            <li><a href="accomodate.jsp">숙박시설</a></li>
+                            <li><a href="food.jsp">일반먹거리</a></li>
+                            <li><a href="infoFood.jsp">음식점안내</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                        
                     </li>
                     <li>
-                        <a href="">관광상품
-                            <ul>
-                                <li><a href="tourpass.jsp">울릉아일랜드투어패스</a></li>
-                                <li><a href="healing.jsp">울릉힐링로드</a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                            </ul>
-                        </a>
+                        <a href="" class="dp1">관광상품</a>
+                        <ul class="sub">
+                            <li><a href="tourpass.jsp">울릉아일랜드투어패스</a></li>
+                            <li><a href="healing.jsp">울릉힐링로드</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                        
                     </li>
                     <li>
-                        <a href="">문화행사
-                            <ul>
-                                <li><a href="squid.jsp">오징어축제</a></li>
-                                <li><a href="sing.jsp">울릉해변가요제</a></li>
-                                <li><a href="cultureH.jsp">회당문화제</a></li>
-                                <li><a href="cultureW.jsp">우상문화제</a></li>
-                                <li><a href="swing.jsp">민속그네뛰기</a></li>
-                                <li><a href="moon.jsp">달맞이축제</a></li>
-                                <li><a href="wish.jsp">태하성하신당제</a></li>
-                            </ul>
-                        </a>
+                        <a href="" class="dp1">문화행사</a>
+                        <ul class="sub">
+                            <li><a href="squid.jsp">오징어축제</a></li>
+                            <li><a href="sing.jsp">울릉해변가요제</a></li>
+                            <li><a href="cultureH.jsp">회당문화제</a></li>
+                            <li><a href="cultureW.jsp">우상문화제</a></li>
+                            <li><a href="swing.jsp">민속그네뛰기</a></li>
+                            <li><a href="moon.jsp">달맞이축제</a></li>
+                            <li><a href="wish.jsp">태하성하신당제</a></li>
+                        </ul>
+                        
                     </li>
                     <li>
-                        <a href="">참여마당
-                            <ul>
-                                <li><a href="inform.jsp">공지사항</a></li>
-                                <li><a href="advert.jsp">울릉홍보관</a></li>
-                                <li><a href="informMini.jsp">울릉약소소식</a></li>
-                                <li><a href="booklet.jsp">관광안내책자신청</a></li>
-                                <li><a href="faq.jsp">FAQ</a></li>
-                                <li><a href="wifi.jsp">무선와이파이</a></li>
-                                <li><a href=""></a></li>
-                            </ul>
-                        </a>
+                        <a href="" class="dp1">참여마당</a>
+                        <ul class="sub">
+                            <li><a href="inform.jsp">공지사항</a></li>
+                            <li><a href="advert.jsp">울릉홍보관</a></li>
+                            <li><a href="informMini.jsp">울릉약소소식</a></li>
+                            <li><a href="booklet.jsp">관광안내책자신청</a></li>
+                            <li><a href="faq.jsp">FAQ</a></li>
+                            <li><a href="wifi.jsp">무선와이파이</a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                        
                     </li>
                 </ul>
            </nav>
+        </div>
        </header>
-       <div class="content">
+       <div class="content fix">
            <figure class="vs">
                <ul class="img_box">
                    <li>
                        <a href="">
-                           <img src="" alt="" class="vs_img">
+                           <img src="./img/mVisual_img01.jpg" alt="메인이미지1" class="vs_img">
                            <div class="tit_box">
-                               <h2 class="vs_tit">신비의 섬 울릉도</h2>
-                               <p class="vs_com">Mystrious Island Ulleungdo</p>
+                               <img src="./img/visual_ment.png" alt="신비의 섬 울릉도">
                            </div>
                        </a>
                    </li>
                    <li>
                        <a href="">
-                           <img src="" alt="" class="vs_img">
+                           <img src="./img/mVisual_img02.jpg" alt="메인이미지2" class="vs_img">
                            <div class="tit_box">
-                            <h2 class="vs_tit">신비의 섬 울릉도</h2>
-                            <p class="vs_com">Mystrious Island Ulleungdo</p>
+                            <img src="./img/visual_ment.png" alt="신비의 섬 울릉도">
                            </div>
                        </a>
                    </li>
                    <li>
                        <a href="">
-                           <img src="" alt="" class="vs_img">
+                           <img src="./img/mVisual_img03.jpg" alt="메인이미지3" class="vs_img">
                            <div class="tit_box">
-                            <h2 class="vs_tit">신비의 섬 울릉도</h2>
-                            <p class="vs_com">Mystrious Island Ulleungdo</p>
-                           </div>
-                       </a>
-                   </li>
-                   <li>
-                       <a href="">
-                           <img src="" alt="" class="vs_img">
-                           <div class="tit_box">
-                            <h2 class="vs_tit">신비의 섬 울릉도</h2>
-                            <p class="vs_com">Mystrious Island Ulleungdo</p>
+                            <img src="./img/visual_ment.png" alt="신비의 섬 울릉도">
                            </div>
                        </a>
                    </li>
                </ul>
                <ul class="btn_box">
-                   <li class="btn1"><button></button></li>
-                   <li class="btn2"><button></button></li>
+                   <li class="btn1"><button>이전</button></li>
+                   <li class="btn2"><button>다음</button></li>
                </ul>
            </figure>
-           <section class="page" id="page1">    
+           <section class="page fix" id="page1">    
                <div class="ptit_box">
                    <h4 class="pg_tit1">동쪽 바다의 섬</h4>
                    <h2 class="pg_tit2">울릉으로 오세요</h2>
@@ -170,89 +184,97 @@
                <div class="page_wrap">
                    <ul class="grid">
                        <li class="col6">
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
+                           <div class="col6 col_item col277">
+                               <h3 class="col_tit">일반먹거리</h3>
                            </div>
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
+                           <div class="col6 col_item col277">
+                               <h3 class="col_tit">홍보동영상</h3>
                            </div>
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
+                           <div class="col6 col_item col277">
+                               <h3 class="col_tit">숙박시설</h3>
                            </div>
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
+                           <div class="col6 col_item col277">
+                               <h3 class="col_tit">문화축제</h3>
                            </div>
                        </li>
-                       <li class="col6">
-                        <div class="col12"><img src="" alt="울릉아일랜드투어패스"></div>
-                    </li>
+                       <li class="col6 col_item col554">
+                        <div class="col12">울릉아일랜드투어패스<img src="./img/tourpass_img06.jpg" alt="울릉아일랜드투어패스"></div>
+                       </li>
                    </ul>
                </div>
            </section>
-           <section class="page" id="page2">
+           <section class="page fix" id="page2" style="background-color: #4c7ed4;">
                <div class="ptit_box">
-                   <h4 class="pg_tit1"></h4>
-                   <h2 class="pg_tit2"></h2>
+                   <h4 class="pg_tit1">여러분을 초대합니다</h4>
+                   <h2 class="pg_tit2">울릉의 축제</h2>
                </div>
                <div class="page_wrap">
                    <ul class="grid">
-                       <li class="col6">
-                           <div class="half_box col_item" id="item6">
+                       <li class="col6 col554">
+                           <div class="half_box col_item col554" id="item6">
                                <input type="radio" id="ra1" class="ra" checked >
                                <input type="radio" id="ra2" class="ra">
                                <input type="radio" id="ra3" class="ra">
                                <input type="radio" id="ra4" class="ra">
                                <ul class="pic_ban">
-                                   <li></li>
-                                   <li></li>
-                                   <li></li>
-                                   <li></li>
+                                    <li class="item1">
+                                        <img src="./img/way_ship.png" alt="배">
+                                    </li>
+                                    <li class="item2">
+                                        <img src="./img/way_train.png" alt="열차">
+                                    </li>
+                                    <li class="item3">
+                                        <img src="./img/way_airplane.png" alt="항공">
+                                    </li>
+                                    <li class="item4">
+                                        <img src="./img/way_walk.png" alt="도보">
+                                    </li>
                                </ul>
-                               <ul class="thumb_ban">
+                               <ul class="thumb_ban col6 col277 col_item" style="background-color: #2e99e4">
                                    <li>
-                                       <h3 class="th_tit"></h3>
-                                       <label for="" class="lb1"></label>
-                                       <div class="tbox"><img src="" alt=""></div>
-                                       <label for="" class="lb2"></label>
+                                       <h3 class="th_tit">배</h3>
+                                       <label for="" class="lb1">이전</label>
+                                       <div class="tbox"><img src="./img/thumb_ship.png" alt="배"></div>
+                                       <label for="" class="lb2">다음</label>
                                    </li>
                                    <li>
-                                       <h3 class="th_tit"></h3>
-                                       <label for="" class="lb1"></label>
-                                       <div class="tbox"><img src="" alt=""></div>
-                                       <label for="" class="lb2"></label>
+                                       <h3 class="th_tit">열차</h3>
+                                       <label for="" class="lb1">이전</label>
+                                       <div class="tbox"><img src="./img/thumb_train.png"  alt="열차"></div>
+                                       <label for="" class="lb2">다음</label>
                                    </li>
                                    <li>
-                                       <h3 class="th_tit"></h3>
-                                       <label for="" class="lb1"></label>
-                                       <div class="tbox"><img src="" alt=""></div>
-                                       <label for="" class="lb2"></label>
+                                       <h3 class="th_tit">항공</h3>
+                                       <label for="" class="lb1">이전</label>
+                                       <div class="tbox"><img src="./img/thumb_airplane.png" alt="항공"></div>
+                                       <label for="" class="lb2">다음</label>
                                    </li>
                                    <li>
-                                       <h3 class="th_tit"></h3>
-                                       <label for="" class="lb1"></label>
-                                       <div class="tbox"><img src="" alt=""></div>
-                                       <label for="" class="lb2"></label>
+                                       <h3 class="th_tit">도보</h3>
+                                       <label for="" class="lb1">이전</label>
+                                       <div class="tbox"><img src="./img/thumb_walk.png" alt="도보"></div>
+                                       <label for="" class="lb2">다음</label>
                                    </li>
                                </ul>
                            </div>
                        </li>
-                       <li class="col6">
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
-                               <p class="col_com"></p>
+                       <li class="col6 col554">
+                           <div class="col6 col277 col_item">
+                               <h3 class="col_tit">울릉의 자랑</h3>
+                               <p class="col_com">울릉의 문화재</p>
                                <a href="healing.jsp" class="col_link"></a>
                            </div>
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
-                               <p class="col_com"></p>
+                           <div class="col6 col277 col_item">
+                               <h3 class="col_tit">울릉의 VR</h3>
+                               <p class="col_com">멋진 풍경들</p>
                                <a href="vr.jsp" class="col_link"></a>
                            </div>
-                           <div class="col6">
-                               <h3 class="col_tit"></h3>
-                               <p class="col_com"></p>
+                           <div class="col6 col277 col_item">
+                               <h3 class="col_tit">울릉의 축제</h3>
+                               <p class="col_com">매일이 축제인 곳</p>
                                <a href="sing.jsp" class="col_link"></a>
                            </div>
-                           <div class="col6">
+                           <div class="col6 col277 col_item">
                                <ul class="link_box">
                                    <li><a href="accomodateDetail.jsp">숙박시설</a></li>
                                    <li><a href="food.jsp">일반먹거리</a></li>
@@ -264,114 +286,99 @@
                    </ul>
                </div>
            </section>
-           <section class="page" id="page3">
-               <h2 class="hid tit"></h2>
+           <section class="page fix" id="page3">
+               <h2 class="hid tit">울릉도로 오시는길</h2>
                <div class="page wrap">
                    <ul class="icon_lst">
                        <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
+                           <span class="ico txt">포항에서</span>
+                           <div class="ico_box"><img src="./ico/cont_tourbtn_on.gif" alt=""></div>
                        </li>
                        <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
+                           <span class="ico txt">묵호에서</span>
+                           <div class="ico_box"><img src="./ico/cont_tourbtn_on.gif" alt=""></div>
                        </li>
                        <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
+                           <span class="ico txt">강릉에서</span>
+                           <div class="ico_box"><img src="./ico/cont_tourbtn_on.gif" alt=""></div>
                        </li>
                        <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
+                           <span class="ico txt">후포에서</span>
+                           <div class="ico_box"><img src="./ico/cont_tourbtn_on.gif" alt=""></div>
                        </li>
                        <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
-                       </li>
-                       <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
-                       </li>
-                       <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
-                       </li>
-                       <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
-                       </li>
-                       <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
-                       </li>
-                       <li class="item1">
-                           <span class="ico txt"></span>
-                           <div class="ico_box"><img src="" alt=""></div>
+                        <span class="ico txt">울릉도에서<br>독도로</span>
+                        <div class="ico_box"><img src="./ico/cont_tourbtn_on.gif" alt=""></div>
                        </li>
                    </ul>
                    <ul class="new_lst">
                        <li class="col6">
-                            <h3 class="new_tit"></h3>
-                            <a href="" class="more"></a>
+                            <h3 class="new_tit">새소식</h3>
+                            <a href="info.jsp" class="more"></a>
                             <ul class="noti_lst">
                                 <li class="act">
-                                        <h4 class="noti_tit">새소식</h4>
-                                        <a href="">
-                                            <p class="noti_com">더보기</p>
-                                        </a>
+                                    <h4 class="noti_tit">금년도 섬일주 유람선 운영 중단 안내</h4>
+                                    <a href="">
+                                        <p class="noti_com">1. 유람선(섬일주) 운영은 중단되었음을 알려드립니다.
+                                            기타 문의사항은 054)791-2002로 연락하시기 바랍니다. 
+                                            <br><br>
+                                        2. 유람선(죽도) 운영은 11월까지 운영 예정이나 기상 등의 상황에 따라 달라질 수 있사오니, 
+                                           기타 문의사항은 054)791-6711, 4468로 사전 연락 하시기 바랍니다.
+                                           소요시간 : 2시간 정도 ( 운항 + 체류시간 )
+                                           요금 : 20,000(대인) , 10,000(소인) * 입장료 포함</p>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="배편 안내사항">
-                                        <h4 class="noti_tit"></h4>
+                                    <a href="">
+                                        <h4 class="noti_tit">배편 안내사항</h4>
                                     </a>
-                                    <p class="noti_date"></p>
+                                    <p class="noti_date">2021-01-06</p>
                                 </li>
                                 <li>
-                                    <a href="환불규정 안내">
-                                        <h4 class="noti_tit"></h4>
+                                    <a href="">
+                                        <h4 class="noti_tit">환불규정 안내</h4>
                                     </a>
-                                    <p class="noti_date"></p>
+                                    <p class="noti_date">2021-12-11</p>
                                 </li>
                                 <li>
-                                    <a href="할인요금 안내">
-                                        <h4 class="noti_tit"></h4>
+                                    <a href="">
+                                        <h4 class="noti_tit">할인요금 안내</h4>
                                     </a>
-                                    <p class="noti_date"></p>
+                                    <p class="noti_date">2021-05-09</p>
                                 </li>
                             </ul>
                         </li>
                         <li class="col6">
                             <div class="al_box">
-                                <h3 class="al_tit"></h3>
-                                <p class="al_com">
-                                    <ul class="al_btn_fr">
-                                        <li class="button" class="prev"></li>
-                                        <li class="button" class ="play"></li>
-                                        <li class="button" class="next"></li>
-                                    </ul>
-                                </p>
+                                <h3 class="al_tit">내가 찍은 울릉</h3>
+                                <p class="al_com">바다의 도시 울릉!</p>
+                                <ul class="al_btn_fr">
+                                    <li><button class="prev"></button></li>
+                                    <li><button class="play"></button></li>
+                                    <li><button class="next"></button></li>
+                                </ul>
                             </div>
                             <div class="photo_box">
                                 <ul class="photo_fr">
                                     <li>
-                                        <img src="" alt="" class="photo_img">
-                                        <h4 class="photo_tit"></h4>
-                                        <p class="photo_com"></p>
+                                        <img src="./img/al_img1.jpg" alt="1" class="photo_img">
+                                        <h4 class="photo_tit">울릉의 오후</h4>
+                                        <p class="photo_com">2021-01-02</p>
                                     </li>
                                     <li>
-                                        <img src="" alt="" class="photo_img">
-                                        <h4 class="photo_tit"></h4>
-                                        <p class="photo_com"></p>
+                                        <img src="./img/al_img2.jpg" alt="2" class="photo_img">
+                                        <h4 class="photo_tit">저녁 항구</h4>
+                                        <p class="photo_com">2021-04-01</p>
                                     </li>
                                     <li>
-                                        <img src="" alt="" class="photo_img">
-                                        <h4 class="photo_tit"></h4>
-                                        <p class="photo_com"></p>
+                                        <img src="./img/al_img3.jpg" alt="3" class="photo_img">
+                                        <h4 class="photo_tit">전파탑</h4>
+                                        <p class="photo_com">2020-07-29</p>
                                     </li>
                                     <li>
-                                        <img src="" alt="" class="photo_img">
-                                        <h4 class="photo_tit"></h4>
-                                        <p class="photo_com"></p>
+                                        <img src="./img/al_img4.jpg" alt="4" class="photo_img">
+                                        <h4 class="photo_tit">울릉의 곶</h4>
+                                        <p class="photo_com">2019-07-09</p>
                                     </li>
                                 </ul>
                             </div>
@@ -380,30 +387,30 @@
                </div>
            </section>
        </div>
-       <footer class="ft">
+       <footer class="ft fix">
            <nav class="fnb">
                <ul class="fnb_fr">
-                   <li><a href=""></a></li>
-                   <li><a href=""></a></li>
-                   <li><a href=""></a></li>
-                   <li><a href=""></a></li>
+                   <li><a href="">공지사항</a></li>
+                   <li><a href="">FAQ</a></li>
+                   <li><a href="">시/군청</a></li>
+                   <li><a href="">패밀리사이트</a></li>
                </ul>
            </nav>
            <div class="ft_wrap">
                <nav class="linkbar">
                    <ul>
-                       <li><a href=""></a></li>
-                       <li><a href=""></a></li>
-                       <li><a href=""></a></li>
-                       <li><a href=""></a></li>
-                       <li><a href=""></a></li>
+                       <li><a href="">개인정보처리방침</a></li>
+                       <li><a href="">관광안내</a></li>
+                       <li><a href="">이의제기</a></li>
+                       <li><a href="">정보도용신고</a></li>
                    </ul>
                </nav>
                <div class="copyright">
-                   <p></p>
-                   <p></p>
-               </div>
-               <div class="wa"><img src="" alt="wa인증마크"></div>
+                   <p>[40222] 경상북도 울릉군 울릉읍 도동2길 66  054-791-2191</p>
+                   <p>도동관광안내소 : 054-790-6454 / 저동관광안내소 : 054-791-6629 / 사동관광안내소 : 054-791-9163</p>
+                   <p>Copyrightⓒ 2016 ULLEUNG GUN. ALL RIGHTS RESERVED</p>
+                </div>
+               <div class="wa"><img src="./img/logo_bottom.gif" alt="WA인증 이미지"></div>
            </div>
        </footer>
     </div>
