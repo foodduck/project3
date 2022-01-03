@@ -35,7 +35,36 @@
     
 </head>
 <style>
+    /*figure img*/
 
+    .tit_box {position:absolute; display:block; float:left; }
+    .vs { clear:both; width:100%; max-height:400px; overflow:hidden; position: relative;} 
+    .vs .img_box { width: 300%; } 
+    .vs .img_box li { width: 33.3333%; float:left;  }
+    .vs .img_box li a {display:block; position: relative; }
+    .vs .img_box li .vs_img { display:block; width: 100%; height:auto; }
+    .vs .tit_box { width: 100%; height:100%; position:absolute; top: 30px; left: 50px; z-index:5; }
+    .vs .figure_tit {position: absolute; top:100px; left: 0; z-index:4; padding:60px 280px;
+    color:white; text-align: center;}
+    .vs .vs_tit {font-family: 'nanum-gothic'; font-size: 60px; text-shadow: 2px 2px 2px black; font-weight: bold;}
+    .vs .vs_com {font-family: 'nanum-gothic'; font-size: 20px; text-shadow: 2px 2px 2px black; }
+
+    .btn_box li button {background-color:transparent; display: block; width:40px; height: 200px;
+    background-repeat: no-repeat; background-position:center; background-size: 100% 100%;
+    position:absolute; top:100px; z-index: 11; text-indent: -5000px; cursor:pointer; }
+    .btn_box li.btn1 button {left:50px; background-image: url("./ico/figure_left.gif");}
+    .btn_box li.btn2 button {right:50px; background-image: url("./ico/figure_right.gif");}
+    
+
+    /* page 1 */
+    .ptit_box {width:440px; height:440px; background-color:#38c7cf; color:#fff; 
+    text-align: center; padding-top:350px; box-sizing: border-box; position:absolute; 
+    left:50%; margin-left:-220px; border-radius: 50%; margin-top:-330px; 
+    box-shadow:rgb(184, 178, 178) 3px 3px 3px; text-shadow: black 2px 2px 2px;}
+    
+
+    /* page 2 */
+    
 </style>
 <body>
     <div class="wrap">
@@ -188,7 +217,7 @@
            </figure>
            <script src="./js/figure_button.js"></script>
            <script src="./js/ban.js"></script>
-           <section class="page fix" id="page1">    
+           <section class="page fix" id="page1" style="background-color: #ace999;">    
                <div class="ptit_box">
                    <h4 class="pg_tit1">동쪽 바다의 섬</h4>
                    <h2 class="pg_tit2">울릉으로 오세요</h2>
@@ -224,10 +253,10 @@
                    <ul class="grid">
                        <li class="col6 col554">
                            <div class="half_box col_item col554" id="item6">
-                               <input type="radio" id="ra1" class="ra" checked >
-                               <input type="radio" id="ra2" class="ra">
-                               <input type="radio" id="ra3" class="ra">
-                               <input type="radio" id="ra4" class="ra">
+                               <input type="radio" id="ra1" name="ra" class="ra" checked >
+                               <input type="radio" id="ra2" name="ra" class="ra">
+                               <input type="radio" id="ra3" name="ra" class="ra">
+                               <input type="radio" id="ra4" name="ra" class="ra">
                                <ul class="pic_ban">
                                     <li class="item1">
                                         <img src="./img/way_ship.png" alt="배">
@@ -242,32 +271,40 @@
                                         <img src="./img/way_walk.png" alt="도보">
                                     </li>
                                </ul>
-                               <ul class="thumb_ban col6 col277 col_item" style="background-color: #2e99e4">
-                                   <li>
-                                       <h3 class="th_tit">배</h3>
-                                       <label for="" class="lb1">이전</label>
-                                       <div class="tbox"><img src="./img/thumb_ship.png" alt="배"></div>
-                                       <label for="" class="lb2">다음</label>
-                                   </li>
-                                   <li>
-                                       <h3 class="th_tit">열차</h3>
-                                       <label for="" class="lb1">이전</label>
-                                       <div class="tbox"><img src="./img/thumb_train.png"  alt="열차"></div>
-                                       <label for="" class="lb2">다음</label>
-                                   </li>
-                                   <li>
-                                       <h3 class="th_tit">항공</h3>
-                                       <label for="" class="lb1">이전</label>
-                                       <div class="tbox"><img src="./img/thumb_airplane.png" alt="항공"></div>
-                                       <label for="" class="lb2">다음</label>
-                                   </li>
-                                   <li>
-                                       <h3 class="th_tit">도보</h3>
-                                       <label for="" class="lb1">이전</label>
-                                       <div class="tbox"><img src="./img/thumb_walk.png" alt="도보"></div>
-                                       <label for="" class="lb2">다음</label>
-                                   </li>
-                               </ul>
+                               <div class="thumb_vs_wrap">
+                                    <ul class="thumb_ban col6 col277 col_item" style="background-color: #2e99e4">
+                                        <li>
+                                            <h3 class="th_tit">배</h3>
+                                            <label for="" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/thumb_ship.png" alt="배"></div>
+                                            <label for="" class="lb2">다음</label>
+                                        </li>
+                                        <li>
+                                            <h3 class="th_tit">열차</h3>
+                                            <label for="" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/thumb_train.png"  alt="열차"></div>
+                                            <label for="" class="lb2">다음</label>
+                                        </li>
+                                        <li>
+                                            <h3 class="th_tit">항공</h3>
+                                            <label for="" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/thumb_airplane.png" alt="항공"></div>
+                                            <label for="" class="lb2">다음</label>
+                                        </li>
+                                        <li>
+                                            <h3 class="th_tit">도보</h3>
+                                            <label for="" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/thumb_walk.png" alt="도보"></div>
+                                            <label for="" class="lb2">다음</label>
+                                        </li>
+                                    </ul>
+                                <div class="col_vs_tit_box">
+                                   <h2 class="col_vs_tit">
+                                       <span class="row1">울릉에서</span>
+                                       <span class="row2">힐링하자</span>
+                                   </h2>
+                               </div>
+                                </div>
                            </div>
                        </li>
                        <li class="col6 col554">
@@ -300,7 +337,7 @@
            </section>
            <section class="page fix" id="page3">
                <h2 class="hid tit">울릉도로 오시는길</h2>
-               <div class="page wrap">
+               <div class="page_wrap">
                    <ul class="icon_lst">
                        <li class="item1">
                            <span class="ico txt">포항에서</span>

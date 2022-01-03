@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이더 연습1</title>
+    <link rel="stylesheet" href="typo.css">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .wrap{clear:both; width:100%;}
+        .btn_box li {display: none;}
+        .ra {display: none;}
+        #ra1:checked ~ .btn_box li.item1 {display: block;}
+        #ra2:checked ~ .btn_box li.item2 {display: block;}
+        #ra3:checked ~ .btn_box li.item3 {display: block;}
+        #ra4:checked ~ .btn_box li.item4 {display: block;}
+
+        .vs {clear:both; width: 100%; position: relative; overflow-x: hidden;}
+        .img_box {width: 400%; transition-duration: 0.6s;}
+        .img_box li {width: 25%; float:left;}
+        #ra1:checked ~ .img_box {margin-left: 0;}
+        #ra2:checked ~ .img_box {margin-left: -100%;}
+        #ra3:checked ~ .img_box {margin-left: -200%;}
+        #ra4:checked ~ .img_box {margin-left: -300%;}
+        .btn_box li label {display: block; width: 100px; height: 100px;
+        position: absolute; z-index:10; top:120px; background-color: #fff;
+        text-indent: -10000px;}
+        
+        .btn_box li label.prev {top:100px; left:100px;}
+        .btn_box li label.next {top:100px; right:100px;}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="vs">
+            <input type="radio" name="ra" class="ra" id="ra1" checked>
+            <input type="radio" name="ra" class="ra" id="ra2" >
+            <input type="radio" name="ra" class="ra" id="ra3" >
+            <input type="radio" name="ra" class="ra" id="ra4" >
+
+            <ul class="img_box">
+                <li><img src="./data/vs1.jpg" alt="비주얼1"></li>
+                <li><img src="./data/vs2.jpg" alt="비주얼2"></li>
+                <li><img src="./data/vs3.jpg" alt="비주얼3"></li>
+                <li><img src="./data/vs4.jpg" alt="비주얼4"></li>
+            </ul>
+            <ul class="btn_box">
+                <li class="item1">
+                    <label for="ra4" class="prev">이전</label>
+                    <label for="ra2" class="next">다음</label>
+                </li>
+                <li class="item2">
+                    <label for="ra1" class="prev">이전</label>
+                    <label for="ra3" class="next">다음</label>
+                </li>
+                <li class="item3">
+                    <label for="ra2" class="prev">이전</label>
+                    <label for="ra4" class="next">다음</label>
+                </li>
+                <li class="item4">
+                    <label for="ra3" class="prev">이전</label>
+                    <label for="ra1" class="next">다음</label>
+                </li>
+            </ul>
+        </div>
+    </div> 
+</body>
+</html>
