@@ -5,6 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+      
+      <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+      <script> 
+      //좌표 값을 바꿔서 입력 37.501551440273225, 130.88427096332802
+      function initialize() {
+      var myLatlng = new google.maps.LatLng(37.501551440273225, 130.88427096332802);
+      var mapOptions = {
+          zoom: 18,           //지도 확대 배율
+          center: myLatlng
+      }
+  
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: '울릉관광'	  //레이블을 바꿔서 입력
+      });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+      
     <!-- 파비콘 설정 -->
     <link rel="shortcut icon" href="./ico/ullfavi.gif">
     <link rel="apple-touch-icon" href="./ico/ullfavi.gif" sizes="48x48">
@@ -36,35 +57,26 @@
 </head>
 <style>
     /*figure img*/
-
-    .tit_box {position:absolute; display:block; float:left; }
-    .vs { clear:both; width:100%; max-height:400px; overflow:hidden; position: relative;} 
-    .vs .img_box { width: 300%; } 
-    .vs .img_box li { width: 33.3333%; float:left;  }
-    .vs .img_box li a {display:block; position: relative; }
-    .vs .img_box li .vs_img { display:block; width: 100%; height:auto; }
-    .vs .tit_box { width: 100%; height:100%; position:absolute; top: 30px; left: 50px; z-index:5; }
-    .vs .figure_tit {position: absolute; top:100px; left: 0; z-index:4; padding:60px 280px;
-    color:white; text-align: center;}
-    .vs .vs_tit {font-family: 'nanum-gothic'; font-size: 60px; text-shadow: 2px 2px 2px black; font-weight: bold;}
-    .vs .vs_com {font-family: 'nanum-gothic'; font-size: 20px; text-shadow: 2px 2px 2px black; }
-
-    .btn_box li button {background-color:transparent; display: block; width:40px; height: 200px;
-    background-repeat: no-repeat; background-position:center; background-size: 100% 100%;
-    position:absolute; top:100px; z-index: 11; text-indent: -5000px; cursor:pointer; }
-    .btn_box li.btn1 button {left:50px; background-image: url("./ico/figure_left.gif");}
-    .btn_box li.btn2 button {right:50px; background-image: url("./ico/figure_right.gif");}
+    .vs {clear:both; margin:0 auto; position:relative; width:100%; margin: auto; background-image: url("./img/bg_visual_1.gif");
+    background-repeat: no-repeat; height:360px; background-position: bottom center; z-index: 10}
+    .vs_tit {position: absolute; text-align: center; left:43vw; top:100px;
+    font-size:20pt; font-weight: 600; font-family: 'nanum-Gothic'; color:white;}
+    .sub_box {margin-top:-120px; min-height:86px; z-index: 15; position: absolute; text-align: center;
+    padding:16px; background-color: #fff; border: solid black 1px; width:1200px; float:left;}
+    .content_wrap {width: 1200px; margin: 0 auto;}
+    .sub_tit { width:200px;}
     
 
-    /* page 1 */
-    .ptit_box {width:440px; height:440px; background-color:#38c7cf; color:#fff; 
-    text-align: center; padding-top:350px; box-sizing: border-box; position:absolute; 
-    left:50%; margin-left:-220px; border-radius: 50%; margin-top:-330px; 
-    box-shadow:rgb(184, 178, 178) 3px 3px 3px; text-shadow: black -1px -1px 2px;}
-    
 
-    /* page 2 */
-    
+
+    .page {padding-top: 0; overflow:auto; height: auto; min-height:100vh;}
+
+    /*작은 이미지는 max-width를 설정해 준다.*/
+    .sub_con img {display:block; max-width: 100%;}
+
+    /*본문이 3줄을 넘으면 line-height:1.8 이상*/
+
+
 </style>
 <body>
     <div class="wrap">
@@ -150,7 +162,6 @@
                             <li><a href="moon.html">달맞이축제</a></li>
                             <li><a href="wish.html">태하성하신당제</a></li>
                         </ul>
-                        
                     </li>
                     <li>
                         <a href="" class="dp1">참여마당</a>
@@ -163,7 +174,6 @@
                             <li><a href="wifi.html">무선와이파이</a></li>
                             <li><a href=""></a></li>
                         </ul>
-                        
                     </li>
                 </ul>
            </nav>
@@ -171,53 +181,63 @@
        </header>
        <div class="content fix">
            <figure class="vs" id="vs">
-
+               <!-- 배경 이미지로 채움 -->
+               <p class="vs_tit">신비의 섬 울릉도</p>
            </figure>
            <div class="content_wrap">
                <div class="sub_box">
-                   <h2 class="sub_tit">대주제</h2>
+                   <h2 class="sub_tit">울릉도여행</h2>
                    <div class="bread_box">
-                       <h3 class="cate_tit">소주제</h3>
+                       <h3 class="cate_tit">1박2일 코스</h3>
                        <p class="bread">
-                           <a href="" class="home">홈</a>
-                            gt; <a href="">한눈에 거제</a> 
-                                gt; <a href="">360'VR</a></p>
+                            <a href="index.html" class="home">홈</a> &gt;
+                            <a href="">울릉도 여행</a> &gt;
+                            <a href="">추천코스</a>
+                        </p>
                    </div>
                </div>
                <aside class="leftbar">
                    <nav class="lnb">
                        <ul>
-                           <li><a href="#page1"></a></li>
-                           <li><a href="#page2"></a></li>
-                           <li><a href="#page3"></a></li>
-                           <li><a href="#page4"></a></li>
+                           <li><a href="#page1">추천코스</a></li>
+                           <li><a href="#page2">영상으로 보는 울릉</a></li>
+                           <li><a href="#page3">vr로 보는 울릉</a></li>
+                           <li><a href="#page4">즐길거리</a></li>
                        </ul>    
                    </nav>
                </aside>
            </div>
            <div class="page_box">
                <section class="page" id="page1">
-                    <h2 class="page_tit"></h2>
+                    <h2 class="page_tit">지도</h2>
                     <div class="page_wrap">
-
+                        <div class="sub_pic">
+                            
+                        </div>
                     </div>
                </section>
                <section class="page" id="page2">
-                    <h2 class="page_tit"></h2>
+                    <h2 class="page_tit">관광지 분위기를 느낄 수 있는 활동적인 여행</h2>
                     <div class="page_wrap">
+                        <article class="sub_pic_desc">
 
+                        </article>
                     </div>
                </section>
                <section class="page" id="page3">
-                    <h2 class="page_tit"></h2>
+                    <h2 class="page_tit">자연과 함께하는 생태체험</h2>
                     <div class="page_wrap">
+                        <div class="map">
 
+                        </div>
                     </div>
                </section>
                <section class="page" id="page4">
-                    <h2 class="page_tit"></h2>
+                    <h2 class="page_tit">독도와 함께하는 애국심 고취여행</h2>
                     <div class="page_wrap">
+                        <div class="schedule">
 
+                        </div>
                     </div>
                </section>
            </div>
