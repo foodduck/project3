@@ -57,14 +57,57 @@
     
 
     /* page 1 */
+    #page1 {position: relative;}
+    
     .ptit_box {width:440px; height:440px; background-color:#38c7cf; color:#fff; 
     text-align: center; padding-top:350px; box-sizing: border-box; position:absolute; 
     left:50%; margin-left:-220px; border-radius: 50%; margin-top:-330px; 
     box-shadow:rgb(184, 178, 178) 3px 3px 3px; text-shadow: black -1px -1px 2px;}
     
+    .col_tit { color:black; text-align: center; line-height:3; width: 100%; clear:both; margin-top: 20px; }
+    #item1 { background-color:cornflowerblue;}
+    #item2 { background-color:darkseagreen;}
+    #item3 { background-color:palegoldenrod;}
+    #item4 { background-color:tan;}
+    #item5 { background-color:thistle;}
+    #item6 { background-color:papayawhip;}
+    #item7 { background-image: url("./img/tourpass_img06.jpg"); background-repeat: no-repeat;}
+    .col_link { margin:0 auto; width: 38px; height: 38px; background-image: url("./ico/more_icon.png");                               
+    text-indent:-10000px; background-repeat: no-repeat; background-position:center;}
+    
+    .tourpass_tit {clear:both; font-family: "nanum-Gothic"; text-align: center; 
+    line-height: 4;}
+    .tourpass_desc {clear:both; font-family: "nanum-Gothic"; text-align: center;} 
+    
 
     /* page 2 */
     
+    #item8 { width: 400%;  transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item8 li { width: 25%; float:left; }
+    .thumb_vs_wrap { position:absolute; right:0; bottom: 0; overflow:hidden; width: 300px; height: 277px; }
+    #item9 { width: 400%; margin-left: 0; transition-delay:0.05s; transition-duration:0.6s; }
+    #item7 li label { display:block; width: 18px; height: 36px; 
+    background-repeat: no-repeat; background-position:center center; 
+    position:absolute; bottom:100px; text-indent:-10000px; cursor:pointer; }
+    #item7 li label.lb1 { left:24px; background-image: url("./source/prev.png"); }
+    #item7 li label.lb2 { right:24px; background-image: url("./source/next.png"); }
+    #item7 .tbox { width: 140px; height: 140px; clear:both;overflow:hidden;   margin:20px auto; top: 50px;  border-radius:75px; border:3px solid #fff; }
+    .thumb_vs_wrap #item7 li label { display:none; }
+
+    #ra1:checked ~ .thumb_vs_wrap #item9 .item1 label { display:block; }
+    #ra2:checked ~ .thumb_vs_wrap #item9 .item2 label { display:block; }
+    #ra3:checked ~ .thumb_vs_wrap #item9 .item3 label { display:block; }
+    #ra4:checked ~ .thumb_vs_wrap #item9 .item4 label { display:block; }
+    #ra1:checked ~ .thumb_vs_wrap #item9 { margin-left: 0; }
+    #ra2:checked ~ .thumb_vs_wrap #item9 { margin-left:-100%; }
+    #ra3:checked ~ .thumb_vs_wrap #item9 { margin-left:-200%; }
+    #ra4:checked ~ .thumb_vs_wrap #item9 { margin-left:-300%; }
+    #ra1:checked ~ #item8 { margin-left: 0; }
+    #ra2:checked ~ #item8 { margin-left:-100%; }
+    #ra3:checked ~ #item8 { margin-left:-200%; }
+    #ra4:checked ~ #item8 { margin-left:-300%; }
+
 </style>
 <body>
     <div class="wrap">
@@ -225,21 +268,41 @@
                <div class="page_wrap">
                    <ul class="grid">
                        <li class="col6">
-                           <div class="col6 col_item col277">
+                           <div class="col6 col_item col166" id="item1">
                                <h3 class="col_tit">일반먹거리</h3>
+                               <a href="" class="col_link">자세히</a>
                            </div>
-                           <div class="col6 col_item col277">
+                           <div class="col6 col_item col166" id="item2">
                                <h3 class="col_tit">홍보동영상</h3>
+                               <a href="" class="col_link">자세히</a>
                            </div>
-                           <div class="col6 col_item col277">
+                           <div class="col6 col_item col166" id="item3">
                                <h3 class="col_tit">숙박시설</h3>
+                               <a href="" class="col_link">자세히</a>
                            </div>
-                           <div class="col6 col_item col277">
+                           <div class="col6 col_item col166" id="item4">
                                <h3 class="col_tit">문화축제</h3>
+                               <a href="" class="col_link">자세히</a>
+                           </div>
+                           <div class="col6 col_item col166" id="item5">
+                               <h3 class="col_tit">배편안내</h3>
+                               <a href="" class="col_link">자세히</a>
+                           </div>
+                           <div class="col6 col_item col166" id="item6">
+                               <h3 class="col_tit">즐길거리</h3>
+                               <a href="" class="col_link">자세히</a>
                            </div>
                        </li>
-                       <li class="col6 col_item col554">
-                        <div class="col12">울릉아일랜드투어패스<img src="./img/tourpass_img06.jpg" alt="울릉아일랜드투어패스"></div>
+                       <li class="col6 col_item col500" id="item7">
+                        <div class="col12" class="tourpass_pro">
+                            <h3 class="tourpass_tit">울릉도 투어패스란?</h3>
+                            <ul class="tourpass_desc">
+                                <li>1. 주요 관광지 30% 할인!</li>
+                                <li>2. 간단한 발급으로 최대 3일까지</li>
+                                <li>3. 핫플레이스 이용 가능</li>
+                                <li>4. 케이블카 이용 무료!</li>
+                            </ul>
+                        </div>
                        </li>
                    </ul>
                </div>
@@ -251,14 +314,14 @@
                </div>
                <div class="page_wrap">
                    <ul class="grid">
-                       <li class="col6 col554">
-                           <div class="half_box col_item col554" id="item6">
+                       <li class="col6 col333">
+                           <div class="half_box col_item col333">
                                <input type="radio" id="ra1" name="ra" class="ra" checked >
                                <input type="radio" id="ra2" name="ra" class="ra">
                                <input type="radio" id="ra3" name="ra" class="ra">
                                <input type="radio" id="ra4" name="ra" class="ra">
-                               <ul class="pic_ban">
-                                    <li class="item1">
+                               <ul class="pic_ban col500">
+                                    <li class="item1" id="item8">
                                         <img src="./img/way_ship.png" alt="배">
                                     </li>
                                     <li class="item2">
@@ -272,7 +335,7 @@
                                     </li>
                                </ul>
                                <div class="thumb_vs_wrap">
-                                    <ul class="thumb_ban col6 col277 col_item" style="background-color: #2e99e4">
+                                    <ul class="thumb_ban col6 col166 col_item" id="item9" style="background-color: #2e99e4">
                                         <li>
                                             <h3 class="th_tit">배</h3>
                                             <label for="" class="lb1">이전</label>
@@ -307,23 +370,23 @@
                                 </div>
                            </div>
                        </li>
-                       <li class="col6 col554">
-                           <div class="col6 col277 col_item">
+                       <li class="col6 col333">
+                           <div class="col6 col166 col_item">
                                <h3 class="col_tit">울릉의 자랑</h3>
                                <p class="col_com">울릉의 문화재</p>
                                <a href="healing.html" class="col_link"></a>
                            </div>
-                           <div class="col6 col277 col_item">
+                           <div class="col6 col166 col_item">
                                <h3 class="col_tit">울릉의 VR</h3>
                                <p class="col_com">멋진 풍경들</p>
                                <a href="vr.html" class="col_link"></a>
                            </div>
-                           <div class="col6 col277 col_item">
+                           <div class="col6 col166 col_item">
                                <h3 class="col_tit">울릉의 축제</h3>
                                <p class="col_com">매일이 축제인 곳</p>
                                <a href="sing.html" class="col_link"></a>
                            </div>
-                           <div class="col6 col277 col_item">
+                           <div class="col6 col166 col_item">
                                <ul class="link_box">
                                    <li><a href="accomodateDetail.html">숙박시설</a></li>
                                    <li><a href="food.html">일반먹거리</a></li>
@@ -336,6 +399,10 @@
                </div>
            </section>
            <section class="page fix" id="page3">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">모든 정보가 한눈에</h4>
+                <h2 class="pg_tit2">울릉의 소식통</h2>
+            </div>
                <h2 class="hid tit">울릉도로 오시는길</h2>
                <div class="page_wrap">
                    <ul class="icon_lst">

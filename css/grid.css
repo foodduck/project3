@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* 12그리드 */
-.grid { clear:both; width: 1200px; margin: 0 auto; }
+.grid { clear:both; width: 1200px; margin: 0 auto; padding-top:15vw; }
 .grid [class^="col"] { display:block; float:left; box-sizing:border-box; overflow:hidden; }
 .col1 { width: 8.3333%; }
 .col2 { width: 16.6667%; }
@@ -8,12 +8,13 @@
 .col4 { width: 33.3333%; }
 .col5 { width: 41.6667%; }
 .col6 { width: 50%; }
-.col7 { width: 58.33333%; }
+.col7 { width: 58.3333%; }
 .col8 { width: 66.6667%; }
 .col9 { width: 75%; }
 .col10 { width: 83.3333%; }
 .col11 { width: 91.6667%;   }
 .col12 { width: 100%; }
-.col277 { height: 277px;  }
-.col554 { height: 554px; }
+.col166 { height: 166.6667px;  }
+.col333 { height: 333.3333px; }
+.col500 { height: 500px; }
 .col_item { background-repeat: no-repeat; background-size:100% 100%; background-position: center center; }
