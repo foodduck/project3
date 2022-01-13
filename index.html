@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>울릉관광</title>
     <!-- 파비콘 설정 -->
     <link rel="shortcut icon" href="./ico/ullfavi.gif">
     <link rel="apple-touch-icon" href="./ico/ullfavi.gif" sizes="48x48">
@@ -30,102 +30,102 @@
     <!-- <link rel="stylesheet"href="./css/reset2.css"> -->
     <!-- <link rel="stylesheet"href="./css/normalize.css"> -->
     <link rel="stylesheet" href="./css/jquery.bxslider.min.css">
-    <link rel="stylesheet"href="./css/grid.css">
-    <link rel="stylesheet"href="./css/common.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/common.css">
     
+    <style>
+        /*figure img*/
+    
+        .tit_box {position:absolute; display:block; float:left; }
+        .vs { clear:both; width:100%; max-height:400px; overflow:hidden; position: relative;} 
+        .vs .img_box { width: 300%; } 
+        .vs .img_box li { width: 33.3333%; float:left;  }
+        .vs .img_box li a {display:block; position: relative; }
+        .vs .img_box li .vs_img { display:block; width: 100%; height:auto; }
+        .vs .tit_box { width: 100%; height:100%; position:absolute; top: 30px; left: 50px; z-index:5; }
+        .vs .figure_tit {position: absolute; top:100px; left: 0; z-index:4; padding:60px 280px;
+        color:white; text-align: center;}
+        .vs .vs_tit {font-family: 'nanum-gothic'; font-size: 60px; text-shadow: 2px 2px 2px black; font-weight: bold;}
+        .vs .vs_com {font-family: 'nanum-gothic'; font-size: 20px; text-shadow: 2px 2px 2px black; }
+    
+        .btn_box li button {background-color:transparent; display: block; width:40px; height: 200px;
+        background-repeat: no-repeat; background-position:center; background-size: 100% 100%;
+        position:absolute; top:100px; z-index: 11; text-indent: -5000px; cursor:pointer; }
+        .btn_box li.btn1 button {left:50px; background-image: url("./ico/figure_left.gif");}
+        .btn_box li.btn2 button {right:50px; background-image: url("./ico/figure_right.gif");}
+        
+    
+        /* page 1 */
+        #page1 {position: relative;}
+        
+        .ptit_box {width:440px; height:440px; background-color:#38c7cf; color:#fff; 
+        text-align: center; padding-top:350px; box-sizing: border-box; position:absolute; 
+        left:50%; margin-left:-220px; border-radius: 50%; margin-top:-330px; 
+        box-shadow:rgb(184, 178, 178) 3px 3px 3px; text-shadow: black -1px -1px 2px;}
+        
+        .col_tit { color:black; text-align: center; line-height:3; width: 100%; clear:both; margin-top: 20px; }
+        #item1 { background-color:cornflowerblue;}
+        #item2 { background-color:darkseagreen;}
+        #item3 { background-color:palegoldenrod;}
+        #item4 { background-color:tan;}
+        #item5 { background-color:thistle;}
+        #item6 { background-color:papayawhip;}
+        #item7 { background-image: url("./img/tourpass_img06.jpg"); background-repeat: no-repeat;}
+        .col_link { margin:0 auto; width: 38px; height: 38px; background-image: url("./ico/more_icon.png");                               
+        text-indent:-10000px; background-repeat: no-repeat; background-position:center;}
+        
+        .tourpass_tit {clear:both; font-family: "nanum-Gothic"; text-align: center; 
+        line-height: 4;}
+        .tourpass_desc {clear:both; font-family: "nanum-Gothic"; text-align: center;} 
+        
+    
+        /* page 2 */
+        .half_box {position: relative;}
+        #item8 { height: 400%;  transition-delay:0.05s; 
+        transition-duration:0.6s; }
+        #item8 li { width: 25%; float:left; }
+        .thumb_vs_wrap { position:absolute; right:0; bottom: 0; overflow:hidden; width: 300px; height: 166px; }
+        #item9 { height: 400%; margin: 0; transition-delay:0.05s; transition-duration:0.6s; }
+        #item9 li label { display:block; width: 18px; height: 36px; 
+        background-repeat: no-repeat; background-position:center center; 
+        position:absolute;  text-indent:-10000px; cursor:pointer; }
+        #item9 li label.lb1 { left:24px; background-image: url("./ico/arrow_1.png"); }
+        #item9 li label.lb2 { right:24px; background-image: url("./ico/arrow_1.png"); }
+        #item9 .tbox { width: 140px; height: 140px; clear:both;overflow:hidden;   margin:20px auto; top: 50px;  border-radius:75px; border:3px solid #fff; }
+        .thumb_vs_wrap #item7 li label { display:none; }
+        /* .ra { display:none; } */
+        #ra1:checked ~ .thumb_vs_wrap #item9 .item1 label { display:block; }
+        #ra2:checked ~ .thumb_vs_wrap #item9 .item2 label { display:block; }
+        #ra3:checked ~ .thumb_vs_wrap #item9 .item3 label { display:block; }
+        #ra4:checked ~ .thumb_vs_wrap #item9 .item4 label { display:block; }
+        #ra1:checked ~ .thumb_vs_wrap #item9 { margin-top: 0; }
+        #ra2:checked ~ .thumb_vs_wrap #item9 { margin-top:-100%; }
+        #ra3:checked ~ .thumb_vs_wrap #item9 { margin-top:-200%; }
+        #ra4:checked ~ .thumb_vs_wrap #item9 { margin-top:-300%; }
+        #ra1:checked ~ #item8 { margin-top: 0; }
+        #ra2:checked ~ #item8 { margin-top:-100%; }
+        #ra3:checked ~ #item8 { margin-top:-200%; }
+        #ra4:checked ~ #item8 { margin-top:-300%; }
+        .col_vs_tit_box { position:absolute; top: 0; left: 0; }
+        .col_vs_tit { clear:both; width: 100%;  padding-top: 50px;  }
+        .col_vs_com { padding-left: 120px; padding-top: 30px; }
+        #item10 .col_tit, #item9 .col_tit { line-height: 1.4; } 
+        
+        #page2 .col_com { clear:both; float:none; width:auto; margin:0px auto; }
+        .col_tit.black_txt { color:#000; line-height: 1.6; padding-top: 12px; }
+        .col_tit.black_txt:after { background-color: #00b2a3; }
+        #item13 { position:relative; }
+        #item13 .link_box { position:absolute; bottom: 0; left: 0; width: 100%; }
+        #item13 .link_box li { display:block; width: 50%; float:left; }
+        #item13 .link_box li a { display:block; line-height: 65px; height: 65px; color:#222; background-color: #00b2a3; padding-left:64px; font-size:14px; border-top:1px solid #fff; border-left:1px solid #fff; 
+        background-repeat: no-repeat; background-position:18px center; }
+        #item13 .link_box li:nth-child(2n+1) a { border-left:0px; }
+        #item13 .link_box li.item1 a { background-image: url("./source/pg2_icon1.png"); }
+        #item13 .link_box li.item2 a { background-image: url("./source/pg2_icon2.png"); }
+        #item13 .link_box li.item3 a { background-image: url("./source/pg2_icon3.png"); }
+        #item13 .link_box li.item4 a { background-image: url("./source/pg2_icon4.png"); }
+    </style>
 </head>
-<style>
-    /*figure img*/
-
-    .tit_box {position:absolute; display:block; float:left; }
-    .vs { clear:both; width:100%; max-height:400px; overflow:hidden; position: relative;} 
-    .vs .img_box { width: 300%; } 
-    .vs .img_box li { width: 33.3333%; float:left;  }
-    .vs .img_box li a {display:block; position: relative; }
-    .vs .img_box li .vs_img { display:block; width: 100%; height:auto; }
-    .vs .tit_box { width: 100%; height:100%; position:absolute; top: 30px; left: 50px; z-index:5; }
-    .vs .figure_tit {position: absolute; top:100px; left: 0; z-index:4; padding:60px 280px;
-    color:white; text-align: center;}
-    .vs .vs_tit {font-family: 'nanum-gothic'; font-size: 60px; text-shadow: 2px 2px 2px black; font-weight: bold;}
-    .vs .vs_com {font-family: 'nanum-gothic'; font-size: 20px; text-shadow: 2px 2px 2px black; }
-
-    .btn_box li button {background-color:transparent; display: block; width:40px; height: 200px;
-    background-repeat: no-repeat; background-position:center; background-size: 100% 100%;
-    position:absolute; top:100px; z-index: 11; text-indent: -5000px; cursor:pointer; }
-    .btn_box li.btn1 button {left:50px; background-image: url("./ico/figure_left.gif");}
-    .btn_box li.btn2 button {right:50px; background-image: url("./ico/figure_right.gif");}
-    
-
-    /* page 1 */
-    #page1 {position: relative;}
-    
-    .ptit_box {width:440px; height:440px; background-color:#38c7cf; color:#fff; 
-    text-align: center; padding-top:350px; box-sizing: border-box; position:absolute; 
-    left:50%; margin-left:-220px; border-radius: 50%; margin-top:-330px; 
-    box-shadow:rgb(184, 178, 178) 3px 3px 3px; text-shadow: black -1px -1px 2px;}
-    
-    .col_tit { color:black; text-align: center; line-height:3; width: 100%; clear:both; margin-top: 20px; }
-    #item1 { background-color:cornflowerblue;}
-    #item2 { background-color:darkseagreen;}
-    #item3 { background-color:palegoldenrod;}
-    #item4 { background-color:tan;}
-    #item5 { background-color:thistle;}
-    #item6 { background-color:papayawhip;}
-    #item7 { background-image: url("./img/tourpass_img06.jpg"); background-repeat: no-repeat;}
-    .col_link { margin:0 auto; width: 38px; height: 38px; background-image: url("./ico/more_icon.png");                               
-    text-indent:-10000px; background-repeat: no-repeat; background-position:center;}
-    
-    .tourpass_tit {clear:both; font-family: "nanum-Gothic"; text-align: center; 
-    line-height: 4;}
-    .tourpass_desc {clear:both; font-family: "nanum-Gothic"; text-align: center;} 
-    
-
-    /* page 2 */
-    .half_box {position: relative;}
-    #item8 { height: 400%;  transition-delay:0.05s; 
-    transition-duration:0.6s; }
-    #item8 li { width: 25%; float:left; }
-    .thumb_vs_wrap { position:absolute; right:0; bottom: 0; overflow:hidden; width: 300px; height: 166px; }
-    #item9 { height: 400%; margin: 0; transition-delay:0.05s; transition-duration:0.6s; }
-    #item9 li label { display:block; width: 18px; height: 36px; 
-    background-repeat: no-repeat; background-position:center center; 
-    position:absolute;  text-indent:-10000px; cursor:pointer; }
-    #item9 li label.lb1 { left:24px; background-image: url("./ico/arrow_1.png"); }
-    #item9 li label.lb2 { right:24px; background-image: url("./ico/arrow_1.png"); }
-    #item9 .tbox { width: 140px; height: 140px; clear:both;overflow:hidden;   margin:20px auto; top: 50px;  border-radius:75px; border:3px solid #fff; }
-    .thumb_vs_wrap #item7 li label { display:none; }
-    /* .ra { display:none; } */
-    #ra1:checked ~ .thumb_vs_wrap #item9 .item1 label { display:block; }
-    #ra2:checked ~ .thumb_vs_wrap #item9 .item2 label { display:block; }
-    #ra3:checked ~ .thumb_vs_wrap #item9 .item3 label { display:block; }
-    #ra4:checked ~ .thumb_vs_wrap #item9 .item4 label { display:block; }
-    #ra1:checked ~ .thumb_vs_wrap #item9 { margin-top: 0; }
-    #ra2:checked ~ .thumb_vs_wrap #item9 { margin-top:-100%; }
-    #ra3:checked ~ .thumb_vs_wrap #item9 { margin-top:-200%; }
-    #ra4:checked ~ .thumb_vs_wrap #item9 { margin-top:-300%; }
-    #ra1:checked ~ #item8 { margin-top: 0; }
-    #ra2:checked ~ #item8 { margin-top:-100%; }
-    #ra3:checked ~ #item8 { margin-top:-200%; }
-    #ra4:checked ~ #item8 { margin-top:-300%; }
-    .col_vs_tit_box { position:absolute; top: 0; left: 0; }
-    .col_vs_tit { clear:both; width: 100%;  padding-top: 50px;  }
-    .col_vs_com { padding-left: 120px; padding-top: 30px; }
-    #item10 .col_tit, #item9 .col_tit { line-height: 1.4; } 
-    
-    #page2 .col_com { clear:both; float:none; width:auto; margin:0px auto; }
-    .col_tit.black_txt { color:#000; line-height: 1.6; padding-top: 12px; }
-    .col_tit.black_txt:after { background-color: #00b2a3; }
-    #item13 { position:relative; }
-    #item13 .link_box { position:absolute; bottom: 0; left: 0; width: 100%; }
-    #item13 .link_box li { display:block; width: 50%; float:left; }
-    #item13 .link_box li a { display:block; line-height: 65px; height: 65px; color:#222; background-color: #00b2a3; padding-left:64px; font-size:14px; border-top:1px solid #fff; border-left:1px solid #fff; 
-    background-repeat: no-repeat; background-position:18px center; }
-    #item13 .link_box li:nth-child(2n+1) a { border-left:0px; }
-    #item13 .link_box li.item1 a { background-image: url("./source/pg2_icon1.png"); }
-    #item13 .link_box li.item2 a { background-image: url("./source/pg2_icon2.png"); }
-    #item13 .link_box li.item3 a { background-image: url("./source/pg2_icon3.png"); }
-    #item13 .link_box li.item4 a { background-image: url("./source/pg2_icon4.png"); }
-</style>
 <body>
     <div class="wrap">
        <header class="hd fix">
@@ -158,7 +158,6 @@
                             <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
-                        
                     </li>
                     <li>
                         <a href="" class="dp1">울릉도여행</a>
@@ -171,7 +170,6 @@
                             <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
-                        
                     </li>
                     <li>
                         <a href="" class="dp1">숙박 및 먹거리</a>
@@ -184,7 +182,6 @@
                             <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
-                        
                     </li>
                     <li>
                         <a href="" class="dp1">관광상품</a>
@@ -197,7 +194,6 @@
                             <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
-                        
                     </li>
                     <li>
                         <a href="" class="dp1">문화행사</a>
@@ -210,20 +206,18 @@
                             <li><a href="moon.html">달맞이축제</a></li>
                             <li><a href="wish.html">태하성하신당제</a></li>
                         </ul>
-                        
                     </li>
                     <li>
                         <a href="" class="dp1">참여마당</a>
                         <ul class="sub">
-                            <li><a href="inform.html">공지사항</a></li>
+                            <li><a href="boardList.html">공지사항</a></li>
+                            <li><a href="boardWrite.html">글쓰기</a></li>
                             <li><a href="advert.html">울릉홍보관</a></li>
                             <li><a href="informMini.html">울릉약소소식</a></li>
                             <li><a href="booklet.html">관광안내책자신청</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a href="wifi.html">무선와이파이</a></li>
-                            <li><a href=""></a></li>
                         </ul>
-                        
                     </li>
                 </ul>
            </nav>
@@ -311,7 +305,7 @@
                            </div>
                        </li>
                        <li class="col6 col_item col500" id="item7">
-                        <div class="col12" class="tourpass_pro">
+                        <div class="col12 tourpass_pro">
                             <h3 class="tourpass_tit">울릉도 투어패스란?</h3>
                             <ul class="tourpass_desc">
                                 <li>1. 주요 관광지 30% 할인!</li>
@@ -487,9 +481,9 @@
                                 <h3 class="al_tit">내가 찍은 울릉</h3>
                                 <p class="al_com">바다의 도시 울릉!</p>
                                 <ul class="al_btn_fr">
-                                    <li><button class="prev"></button></li>
-                                    <li><button class="play"></button></li>
-                                    <li><button class="next"></button></li>
+                                    <li><button class="prev">이전</button></li>
+                                    <li><button class="play">재생</button></li>
+                                    <li><button class="next">다음</button></li>
                                 </ul>
                             </div>
                             <div class="photo_box">
@@ -544,7 +538,9 @@
                    <p>도동관광안내소 : 054-790-6454 / 저동관광안내소 : 054-791-6629 / 사동관광안내소 : 054-791-9163</p>
                    <p>Copyrightⓒ 2016 ULLEUNG GUN. ALL RIGHTS RESERVED</p>
                 </div>
-               <div class="logo_ft"><img src="./img/logo_bottom.gif" alt="울릉관광 하단로고"></div>
+               <div class="logo_ft">
+                   <img src="./img/logo_bottom.gif" alt="울릉관광 하단로고">
+                </div>
            </div>
        </footer>
     </div>
