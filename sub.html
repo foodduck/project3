@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>관광안내</title>
       
       <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
       <script> 
@@ -12,7 +12,7 @@
       function initialize() {
       var myLatlng = new google.maps.LatLng(37.501551440273225, 130.88427096332802);
       var mapOptions = {
-          zoom: 18,           //지도 확대 배율
+          zoom: 14,           //지도 확대 배율
           center: myLatlng
       }
   
@@ -51,41 +51,49 @@
     <!-- <link rel="stylesheet"href="./css/reset2.css"> -->
     <!-- <link rel="stylesheet"href="./css/normalize.css"> -->
     <link rel="stylesheet" href="./css/jquery.bxslider.min.css">
-    <link rel="stylesheet"href="./css/grid.css">
-    <link rel="stylesheet"href="./css/common.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <style>
+        /*figure img*/
+        .vs { clear:both; width: 100%; height: 400px; 
+        background-image:url("./img/bg_visual_1.gif"); 
+        background-repeat: no-repeat; background-position: center;}
+        .vs_tit {position: absolute; text-align: center; left:43vw; padding-top:100px;
+        font-size:20pt; font-weight: 600; font-family: 'nanum-Gothic'; color:white;}
+        .content_wrap { clear:both; width: 1200px; margin: 0 auto; margin-top:0px; }
+        .sub_tit { height: 160px; line-height: 144px; font-size:22px; 
+            background-color: #2e70b4; text-align:center; width: 190px; float:left; color:#fff; }
+        .sub_box {margin-top:-160px; }
+        .bread_box { height: 136px; background-color: #fff; width: 980px; float:right; 
+            padding-left: 30px; padding-top: 24px; position:relative; }
+        
+        .cate_tit { color:#999; font-size:24px; }
+        .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
+        
+        .leftbar {background-color: rgb(238, 215, 215); width:190px;}
+        .lnb li a {font-size:16px; }
+        .lnb li.act a {color:rgb(54, 76, 204); font-weight:600; font-size:24px; }
+        .page_wrap {margin-bottom: 20px;}
+        .page_box {clear:both; margin:10px auto;  min-width:30vh; position: relative; }
+        .page {padding-top: 0; overflow:auto; height: auto; min-height:50vh;}
     
+        /*작은 이미지는 max-width를 설정해 준다.*/
+        .sub_con img {display:block; max-width: 100%;}
+            
+        /*본문이 3줄을 넘으면 line-height:1.8 이상*/
+        
+        .tit_ment_img {display:block; margin:0 auto;}
+        .page_tit {color:gray; text-align: center; margin:10px;}
+        .map_area_desc {border: solid gray 1px; border-radius:4px; padding:20px; margin-top:30px;}    
+        
+        .red_notice {color:rgb(240, 89, 89); text-indent:10px;}
+        .page { display:none; }
+        .page:target { display:block; }
+    </style>
 </head>
-<style>
-    /*figure img*/
-    .vs { clear:both; width: 100%; height: 400px; 
-    background-image:url("./img/bg_visual_1.gif"); 
-    background-repeat: no-repeat; background-position: center;}
-    .vs_tit {position: absolute; text-align: center; left:43vw; padding-top:100px;
-    font-size:20pt; font-weight: 600; font-family: 'nanum-Gothic'; color:white;}
-    .content_wrap { clear:both; width: 1200px; margin: 0 auto; margin-top:0px; }
-    .sub_tit { height: 160px; line-height: 144px; font-size:22px; background-color: #2e70b4; text-align:center; width: 190px; float:left; color:#fff; }
-    .sub_box {margin-top:-160px; }
-    .bread_box { height: 136px; background-color: #fff; width: 980px; float:right; padding-left: 30px; padding-top: 24px; position:relative; }
-    
-    .cate_tit { color:#999; font-size:24px; }
-    .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
-    
-    .leftbar{background-color: rgb(238, 215, 215); width:190px;}
-
-
-
-    .page {padding-top: 0; overflow:auto; height: auto; min-height:100vh;}
-
-    /*작은 이미지는 max-width를 설정해 준다.*/
-    .sub_con img {display:block; max-width: 100%;}
-
-    /*본문이 3줄을 넘으면 line-height:1.8 이상*/
-    
-
-
-
-</style>
-<body><script>
+<body>
+    <script>
 
     /* 스크립트를 적용할 클래스보다 위에 있다면 .ready를 사용한다. */
     $(document).ready(function(){
@@ -221,10 +229,10 @@
                <aside class="leftbar">
                    <nav class="lnb">
                        <ul>
-                           <li><a href="#page1">추천코스</a></li>
-                           <li><a href="#page2">영상으로 보는 울릉</a></li>
-                           <li><a href="#page3">vr로 보는 울릉</a></li>
-                           <li><a href="#page4">즐길거리</a></li>
+                           <li class="act"><a href="#page1">지도</a></li>
+                           <li><a href="#page2">여행지 경관 설명</a></li>
+                           <li><a href="#page3">생태체험</a></li>
+                           <li><a href="#page4">독도여행</a></li>
                        </ul>    
                    </nav>
                </aside>
@@ -233,33 +241,48 @@
                <section class="page" id="page1">
                     <h2 class="page_tit">지도</h2>
                     <div class="page_wrap">
-                        <div class="sub_pic">
-                            
+                        <div class="map_area">
+                            <!-- API 지도 삽입 -->
+                            <div id="map_canvas" style="width:100%; height:400px">
                         </div>
                     </div>
                </section>
                <section class="page" id="page2">
+                    <img class="tit_ment_img" src="./img/tit_ment02.gif" alt="관광안내">
                     <h2 class="page_tit">관광지 분위기를 느낄 수 있는 활동적인 여행</h2>
                     <div class="page_wrap">
-                        <article class="sub_pic_desc">
-
+                        <article class="map_area_desc">
+                            <p>울릉도관광의 매력은 원시림 사이로 가파른 듯 이어지는 산길과 길 옆으로 펼쳐진 섬 특산식물,<br> 
+                                산정상에서 사방으로 다가오는 망망대해를 향해 호연지기를 기르는데 있다.<br> 
+                                간편한 차림으로 산행의 즐거움을 맛볼수 있지만, 자만은 금물.<br> 
+                                눈이 많이 쌓이는 겨울철 산행은 특히 주의가 필요하다.<br> 
+                                특히 연중 등산객의 발걸음이 끊이지 않는 성인봉 정상에서 바라보는 수평선이 절경이다.</p>
                         </article>
                     </div>
                </section>
                <section class="page" id="page3">
+                    <img class="tit_ment_img" src="./img/tit_ment02.gif" alt="관광안내">
                     <h2 class="page_tit">자연과 함께하는 생태체험</h2>
                     <div class="page_wrap">
-                        <div class="map">
-
+                        <div class="schedule">
+                            <h3>1DAY</h3>
+                            <p class ="schedule_info">도착 → 차량으로 육로관광하며 북면으로 이동 → 나리분지 및 북면지역 관광</p>
+                            <h3>2DAY</h3>
+                            <p class ="schedule_info">나리분지 → 성인봉등반 → 도동도착 → 약수공원 → 해안산책로 → 출발</p>
                         </div>
                     </div>
                </section>
                <section class="page" id="page4">
+                    <img class="tit_ment_img" src="./img/tit_ment02.gif" alt="관광안내">
                     <h2 class="page_tit">독도와 함께하는 애국심 고취여행</h2>
                     <div class="page_wrap">
                         <div class="schedule">
-
+                            <h3>1DAY</h3>
+                            <p class="schedule_info">도착 → 차량으로 육로관광하며 북면으로 이동 → 나리분지 및 북면지역 관광</p>
+                            <h3>2DAY</h3>
+                            <p class ="schedule_info">나리분지 → 성인봉등반 → 도동도착 → 약수공원 → 해안산책로 → 출발</p>
                         </div>
+                        <p class="red_notice">※ 숙박시설이 서/북면에 위치할 경우 교통편을 미리 확인하시기 바랍니다.</p>
                     </div>
                </section>
            </div>

@@ -4,9 +4,296 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>게시글 목록</title>
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="./ico/ullfavi.gif">
+    <link rel="apple-touch-icon" href="./ico/ullfavi.gif" sizes="48x48">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="울릉군" />
+    <meta name="Keywords" content="울릉군, 독도, 울릉도, Ulleung-gun, Dokdo" />
+    <meta name="Description" content="울릉군 홈페이지입니다." />
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:url" content="www.Ulleung-travel.kr">
+    <meta property="og:site_name" content="울릉관광">
+    <meta property="og:locale" content="울릉">
+    <meta property="og:title" content="project3">
+    <meta property="og:description" content="울릉관광 홍보사이트">
+    <meta property="og:country-name" content="TheJoeun.co">
+    <!-- 폰트 로딩 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 필수 API 설정 -->
+    <script src="./js/jquery-latest.js"></script>
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <!-- 외부 스타일 로딩-->
+    <!-- <link rel="stylesheet"href="./css/reset2.css"> -->
+    <!-- <link rel="stylesheet"href="./css/normalize.css"> -->
+    <link rel="stylesheet" href="./css/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+          /*figure img*/
+          .vs { clear:both; width: 100%; height: 400px; 
+        background-image:url("./img/bg_visual_1.gif"); 
+        background-repeat: no-repeat; background-position: center;}
+        .vs_tit {position: absolute; text-align: center; left:43vw; padding-top:100px;
+        font-size:20pt; font-weight: 600; font-family: 'nanum-Gothic'; color:white;}
+        .content_wrap { clear:both; width: 1200px; margin: 0 auto; margin-top:0px; }
+        .sub_tit { height: 160px; line-height: 144px; font-size:22px; 
+            background-color: #2e70b4; text-align:center; width: 190px; float:left; color:#fff; }
+        .sub_box {margin-top:-160px; }
+        .bread_box { height: 136px; background-color: #fff; width: 980px; float:right; 
+            padding-left: 30px; padding-top: 24px; position:relative; }
+        
+        .cate_tit { color:#999; font-size:24px; }
+        .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
+        
+        .leftbar {background-color: rgb(238, 215, 215); width:190px;}
+        .lnb li a {font-size:16px; }
+        .lnb li.act a {color:rgb(54, 76, 204); font-weight:600; font-size:24px; }
+        .page_wrap {margin-bottom: 20px;}
+        .page_box {clear:both; margin:10px auto;  min-width:30vh; position: relative; }
+        .page {padding-top: 0; overflow:auto; height: auto; min-height:50vh;}
+    
+        /*작은 이미지는 max-width를 설정해 준다.*/
+        .sub_con img {display:block; max-width: 100%;}
+            
+        /*본문이 3줄을 넘으면 line-height:1.8 이상*/
+        
+        
+        .page_tit {color:gray; text-align: center; margin:10px;}
+        .inform_table {clear:both; margin:10 auto; text-align:center; font-size:14pt; padding:5px; border:solid black 1px;}
+        .inform_table th {font-size:20px;}
+        .inform_table th, td {width:200px;}
+        .inform_table td:last-child {width:100px;}
+        .inform_table tbody td:first-child {font-weight: 800;}
+        .inform_table tbody tr:nth-child(2n) {background-color:bisque;}
+        .inform_table thead {background-color:darkgray;}
+    </style>
 </head>
 <body>
+    <script>
+
+        /* 스크립트를 적용할 클래스보다 위에 있다면 .ready를 사용한다. */
+        $(document).ready(function(){
+            $(".lnb ul li").click(function(){
+                $(".lnb ul li").removeClass("act");
+                $(this).addClass("act");
+            });
+            $(".sub > li").click(function(){
+                $(".lnb ul li").removeClass("act");
+                var t = $(this).index();
+                $(".lnb ul li").eq(t).addClass("act");
+            });
+        });    
+        </script>
     
+        <div class="wrap">
+           <header class="hd fix">
+            <div class="hd_wrap">
+                   <div class="logo">
+                    <a href="index.html" class="logo"><img src="./img/logo.gif" alt=""></a>
+                    <h2 class="logo_tit">울릉관광</h2>
+                   </div>
+               <nav class="tnb">
+                   <ul>
+                       <li class="user_name">000님</li>
+                       <li><a href="login.html">로그인</a></li>
+                       <li><a href="">로그아웃</a></li>
+                       <li><a href="join.html">회원가입</a></li>
+                       <li><a href="mypage.html">마이페이지</a></li>
+                   </ul>
+               </nav>
+               <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="dp1">관광가이드</a>
+                            <ul class="sub">
+                                <li><a href="ship.html">울릉도/독도 배편</a>
+                                    <!-- 하위 메뉴 -->
+                                </li>
+                                <li><a href="helper.html">여행도우미</a></li>
+                                <li><a href="tourmap.html">울릉도투어맵</a></li>
+                                <li><a href="sea.html">해상관광</a></li>
+                                <li><a href="mainLand.html">주요관광지</a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="" class="dp1">울릉도여행</a>
+                            <ul class="sub">
+                                <li><a href="course.html">추천코스</a></li>
+                                <li><a href="ullMovie.html">영상으로 보는 울릉</a></li>
+                                <li><a href="vr.html">VR로 보는 울릉</a></li>
+                                <li><a href="ent.html">즐길거리</a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="" class="dp1">숙박 및 먹거리</a>
+                            <ul class="sub">
+                                <li><a href="accomodate.html">숙박시설</a></li>
+                                <li><a href="food.html">일반먹거리</a></li>
+                                <li><a href="infoFood.html">음식점안내</a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="" class="dp1">관광상품</a>
+                            <ul class="sub">
+                                <li><a href="tourpass.html">울릉아일랜드투어패스</a></li>
+                                <li><a href="healing.html">울릉힐링로드</a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="" class="dp1">문화행사</a>
+                            <ul class="sub">
+                                <li><a href="squid.html">오징어축제</a></li>
+                                <li><a href="sing.html">울릉해변가요제</a></li>
+                                <li><a href="cultureH.html">회당문화제</a></li>
+                                <li><a href="cultureW.html">우상문화제</a></li>
+                                <li><a href="swing.html">민속그네뛰기</a></li>
+                                <li><a href="moon.html">달맞이축제</a></li>
+                                <li><a href="wish.html">태하성하신당제</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">참여마당</a>
+                            <ul class="sub">
+                                <li><a href="inform.html">공지사항</a></li>
+                                <li><a href="advert.html">울릉홍보관</a></li>
+                                <li><a href="informMini.html">울릉약소소식</a></li>
+                                <li><a href="booklet.html">관광안내책자신청</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="wifi.html">무선와이파이</a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+               </nav>
+            </div>
+           </header>
+           <div class="content fix">
+               <figure class="vs" id="vs">
+                   <!-- 배경 이미지로 채움 -->
+                   <p class="vs_tit">신비의 섬 울릉도</p>
+               </figure>
+               <div class="content_wrap">
+                   <div class="sub_box">
+                       <h2 class="sub_tit">울릉도여행</h2>
+                       <div class="bread_box">
+                           <h3 class="cate_tit">1박2일 코스</h3>
+                           <p class="bread">
+                                <a href="index.html" class="home">홈</a> &gt;
+                                <a href="">울릉도 여행</a> &gt;
+                                <a href="">추천코스</a>
+                            </p>
+                       </div>
+                   </div>
+                   <aside class="leftbar">
+                       <nav class="lnb">
+                           <ul>
+                               <li class="act"><a href="#page1">게시글 목록</a></li>
+                               <li><a href="#page2">공지 목록</a></li>
+                               <li><a href="#page3">갤러리</a></li>
+                               <li><a href="#page4">여행소감</a></li>
+                           </ul>    
+                       </nav>
+                   </aside>
+               </div>
+               <div class="page_box">
+                   <section class="page" >
+                        <div class="page_wrap">
+                            <div class="board_table">
+                                <h2 class="page_tit">게시글 목록</h2>
+                                <table class="inform_table" id="data">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>글쓴이</th>
+                                            <th>작성일</th>
+                                            <th>조회수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><a href="">관광요금 변경 안내</a></td>
+                                            <td>관리자</td>
+                                            <td>2021-01-17<td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><a href="">신년 관광이벤트</a></td>
+                                            <td>관리자</td>
+                                            <td>2021-01-01<td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><a href="">일부 시설 점검 안내</a></td>
+                                            <td>관리자</td>
+                                            <td>2020-08-17<td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><a href="">신규 시설 개장 안내</a></td>
+                                            <td>관리자</td>
+                                            <td>2020-05-12<td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                   </section>
+               </div>
+           </div>
+           <footer class="ft fix">
+               <nav class="fnb">
+                   <ul class="fnb_fr">
+                       <li><a href="">공지사항</a></li>
+                       <li><a href="">FAQ</a></li>
+                       <li><a href="">시/군청</a></li>
+                       <li><a href="">패밀리사이트</a></li>
+                   </ul>
+               </nav>
+               <div class="ft_wrap">
+                   <nav class="linkbar">
+                       <ul>
+                           <li><a href="">개인정보처리방침</a></li>
+                           <li><a href="">관광안내</a></li>
+                           <li><a href="">이의제기</a></li>
+                           <li><a href="">정보도용신고</a></li>
+                       </ul>
+                   </nav>
+                   <div class="copyright">
+                       <p>[40222] 경상북도 울릉군 울릉읍 도동2길 66  054-791-2191</p>
+                       <p>도동관광안내소 : 054-790-6454 / 저동관광안내소 : 054-791-6629 / 사동관광안내소 : 054-791-9163</p>
+                       <p>Copyrightⓒ 2016 ULLEUNG GUN. ALL RIGHTS RESERVED</p>
+                    </div>
+                   <div class="wa"><img src="./img/logo_bottom.gif" alt="WA인증 이미지"></div>
+               </div>
+           </footer>
+        </div>
 </body>
 </html>
